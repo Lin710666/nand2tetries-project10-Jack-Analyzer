@@ -326,6 +326,8 @@ class CompilationEngine:
             #<symbol> } </symbol>
             self.tokenizer_obj.advance()
             self.output_file.write(self.printSpace()+self.tokenizer_obj.symbol()+'\n')
+            self.tokenizer_obj.advance()
+        self.tokenizer_obj.back()
         self.deepth -= 1
         self.output_file.write(self.printSpace()+'</ifStatement>\n')
 
